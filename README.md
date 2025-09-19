@@ -1,11 +1,13 @@
 # Books
-GraphQL API example
+GraphQL API example.
 
 ## Usage
 
 ### General
 Endpoint: `<server>/books`
+
 Method: `POST`
+
 Headers: `Content-Type`: `application/json`
 
 ### Body
@@ -35,6 +37,9 @@ Add a new book
 - `200` Success
 - `400` `"query"` missing
 - `415` Request not JSON
+
+### Testing
+The folder `postman` includes a Postman collection and environment to test the API.
 
 ## Tools
 Flask / Graphene / Python
