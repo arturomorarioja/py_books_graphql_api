@@ -2,9 +2,9 @@ from flask import Blueprint, request, jsonify, Response
 from graphql import graphql_sync
 from ..schema import schema
 
-books_bp = Blueprint('books', __name__)
+graphql_bp = Blueprint('graphql', __name__)
 
-@books_bp.route('/books', methods=['POST'])
+@graphql_bp.route('/graphql', methods=['POST'])
 def graphql_server():
     if not request.is_json:
         return jsonify({'error': 'Content-Type must be application/json'}), 415

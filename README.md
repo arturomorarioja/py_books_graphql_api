@@ -4,7 +4,7 @@ GraphQL API example.
 ## Usage
 
 ### General
-Endpoint: `<server>/books`
+Endpoint: `<server>/graphql`
 
 Method: `POST`
 

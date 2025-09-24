@@ -27,12 +27,108 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/books",
+					"raw": "{{BASE_URL}}/graphql",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
-						"books"
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"{ book(title: \\\"1984\\\") { title author } }\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"mutation { addBook(title: \\\"Dune\\\", author: \\\"Frank Herbert\\\") { success book { title author } } }\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"{ books { title author } }\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
 					]
 				}
 			},

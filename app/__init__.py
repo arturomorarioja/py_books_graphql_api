@@ -1,5 +1,5 @@
 from flask import Flask
-from .routes.books import books_bp
+from .routes.graphql import graphql_bp
 
 def create_app() -> Flask:
     app = Flask(__name__)
@@ -10,6 +10,6 @@ def create_app() -> Flask:
         return {'status': 'ok'}
 
     # Register GraphQL endpoint
-    app.register_blueprint(books_bp)
+    app.register_blueprint(graphql_bp)
 
     return app
