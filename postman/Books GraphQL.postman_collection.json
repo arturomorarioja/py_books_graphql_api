@@ -50,12 +50,10 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"query\": \"{ book(title: \\\"1984\\\") { title author } }\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetBook($title: String!) {\r\n  book(title: $title) {\r\n    title\r\n    author\r\n  }\r\n}",
+						"variables": "{\r\n  \"title\": \"1984\"\r\n}"
 					}
 				},
 				"url": {
@@ -82,12 +80,10 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"query\": \"mutation { addBook(title: \\\"Dune\\\", author: \\\"Frank Herbert\\\") { success book { title author } } }\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddBook($title: String!, $author: String!) {\r\n  addBook(title: $title, author: $author) {\r\n    success\r\n    book {\r\n      title\r\n      author\r\n    }\r\n  }\r\n}",
+						"variables": "{\r\n  \"title\": \"The Tempest\",\r\n  \"author\": \"William Shakespeare\"\r\n}"
 					}
 				},
 				"url": {
