@@ -1,35 +1,38 @@
 # Books
-GraphQL API example.
+GraphQL API server example.
+
+It uses an in-memory data store, so the data resets after each server restart.
 
 ## Usage
 
+### Start
+Running the API: `python run.py`
+
 ### General
-Endpoint: `<server>/graphql`
-
-Method: `POST`
-
-Headers: `Content-Type`: `application/json`
+- Endpoint: `<server>/graphql`
+- Method: `POST`
+- Headers: `Content-Type`: `application/json`
 
 ### Body
 
 Query all books
 ```graphql
 {
-    "query": "{ books { title author } }"
+  "query": "{ books { title author } }"
 }
 ```
 
 Query one book
 ```graphql
 {
-    "query": "{ book(title: \"1984\") { title author } }"
+  "query": "{ book(title: \"1984\") { title author } }"
 }
 ```
 
 Add a new book
 ```graphql
 {
-    "query": "mutation { addBook(title: \"Dune\", author: \"Frank Herbert\") { success book { title author } } }"
+  "query": "mutation { addBook(title: \"Dune\", author: \"Frank Herbert\") { success book { title author } } }"
 }
 ```
 
@@ -40,6 +43,8 @@ Add a new book
 
 ### Testing
 The folder `postman` includes a Postman collection and environment to test the API.
+
+Notice that, for demonstration purposes, queries with parameters have the latter defined both as body raw parameters and as GraphQL parameters with GraphQL variables.
 
 ## Tools
 Flask / Graphene / Python
