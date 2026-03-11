@@ -1,0 +1,6 @@
+services:
+  books-api:
+    build: .
+    container_name: py-books-graphql-api
+    ports:
+      - '5000:5000'
